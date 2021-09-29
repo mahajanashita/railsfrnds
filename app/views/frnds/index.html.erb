@@ -1,0 +1,48 @@
+<%if user_signed_in? %>
+  <h1>Frnds</h1>
+
+  <table class="table table-striped table-hover table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th>First name</th>
+        <th>L name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Twitter</th>
+        
+        <th ></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @frnds.each do |frnd| %>
+      <%if frnd.user ==current_user%>
+        <tr>
+          <td>
+            <%= link_to frnd.first_name +' '+ frnd.l_name, frnd %>
+            
+          </td>
+          <td><%= frnd.email %></td>
+          <td><%= frnd.phone %></td>
+          <td><%= frnd.twitter %></td>
+          
+          <td><%= link_to 'Delete', frnd, method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-danger btn-sm" %></td>
+
+        </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Frnd', new_frnd_path ,:class => "btn btn-secondary" %>
+<% else %>
+  <h1>Helooooo Ashita Mahajan</h1>
+  <p>This is my first web Page 
+    </p>
+
+<%end%>
+
+
+ 

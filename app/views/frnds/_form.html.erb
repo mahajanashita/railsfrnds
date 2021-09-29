@@ -1,0 +1,48 @@
+<%= form_with(model: frnd) do |form| %>
+  <% if frnd.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(frnd.errors.count, "error") %> prohibited this frnd from being saved:</h2>
+
+      <ul>
+        <% frnd.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field mb-3">
+    
+    <%= form.text_field :first_name, :class =>"form-control",:placeholder=>"First name" %>
+  </div>
+  
+  <div class="field mb-3 ">
+   
+    <%= form.text_field :l_name,:class =>"form-control",:placeholder=>"Last name " %>
+  </div>
+
+  <div class="field mb-3 ">
+    
+    <%= form.text_field :email ,:class =>"form-control",:placeholder=>"Email"%>
+  </div>
+
+  <div class="field mb-3 ">
+    
+    <%= form.text_field :phone,:class =>"form-control",:placeholder=>"Phone Number" %>
+  </div>
+
+  <div class="field mb-3 ">
+    <%= form.text_field :twitter,:class =>"form-control",:placeholder=>"Twitter" %>
+  </div>
+
+  <div class="field mb-3 ">
+    <%= form.number_field :user_id,id: :frnd_user_id,:class =>"form-control",:value=> current_user.id,type: :hidden %>
+  </div>
+
+   
+
+<br/>
+  <div class="actions ">
+    <%= form.submit :class=>"btn btn-secondary " %>
+  </div>
+<% end %>

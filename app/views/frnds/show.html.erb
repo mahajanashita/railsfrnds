@@ -1,0 +1,30 @@
+<p>
+  <strong>First name:</strong>
+  <%= @frnd.first_name %>
+</p>
+
+<p>
+  <strong>L name:</strong>
+  <%= @frnd.l_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @frnd.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @frnd.phone %>
+</p>
+
+<p>
+  <strong>Twitter:</strong>
+  <%= @frnd.twitter %>
+</p>
+
+<%= link_to 'Edit', edit_frnd_path(@frnd),:class => "btn btn-secondary" %> 
+
+<%= link_to 'Delete', @frnd, method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-danger btn-sm" %>
+
+<%= link_to 'Back', frnds_path,:class => "btn btn-dark" %>

@@ -1,0 +1,12 @@
+<h1>Editing Frnd</h1>
+<br/>
+<%= render 'form', frnd: @frnd %>
+
+
+<br/>
+<%= link_to 'Show', @frnd,:class=>"btn btn-secondary" %> 
+
+<%= link_to 'Delete', @frnd, method: :delete, data: { confirm: 'Are you sure?' },:class=>"btn btn-danger btn-sm" %>
+
+
+<%= link_to 'Back', frnds_path ,:class=>"btn btn-secondary"%>
